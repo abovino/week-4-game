@@ -1,0 +1,37 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+
+}
+
+.container {
+	width: 960px;
+	width: 100%;
+	margin: 0px auto;
+}
+
+#mainheader {
+	text-align: center;
+}
+
+#subzero, #scorpion, #cassie, #raiden {
+	width: 200px;
+}
+
+#maincontent {
+	width: 650px;
+}
+
+.mainsection {
+	width: 50%;
+	border: 2px solid red;
+	float: left;
+}
+
+.sidebar {
+	width: 50%;
+	float: right;
+	border: 2px solid red;
+}
