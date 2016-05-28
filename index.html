@@ -1,35 +1,59 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Mortal Kombat</title>
+	<title>Crystal Collector</title>
 
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 </head>
 <body>
-
-	<header id="mainheader">
-		<div class="container">
-			<h1>Mortal Kombat</h1>
-			<h3>Choose your Character<h3>
+	<header>
+		<div class="container" id="wrapper">
+			<h1>Crystal Collector</h1>
 		</div>
 	</header>
 
-	<div class="container" id="maincontent">
-		<section class="mainsection">
-			<ol>
-				<li><img id="subzero" src="assets/images/subzero.jpg"></li>
-				<li><img id="scorpion" src="assets/images/scorpion.jpg"></li>
-				<li><img id="baraka" src="assets/images/baraka.png"></li>
-				<li><img id="raiden" src="assets/images/raiden.jpg"></li>
-			</ol>
+	<div class="container" id="wrapper">
+
+		<section id="content">			
+			<div id="rules">
+				<h3>Rules:</h3>
+				<ol>
+					<li>You will be given a random number at the start of the game.</li>
+					<li>There are four crystals below.  By clicking on a crystal you will add a specific amount of points to your total score.</li>
+					<li>You win the game by matching your total score to random number, you lose the game if your total score goes above the random number.</li>
+					<li>The value of each crystal is hidden from you until you click on it.</li>
+					<li>Each time when the game starts, the game will change the values of each crystal.</li>
+				</ol>
+			</div>			
 		</section>
 
-		<section class="sidebar">
-			<div id="enemies">
-				<h2>Enemies</h2>
+		<section id="sidebar">
+			<div id="game">
+				<h3><span>Goal:</span><div id="ranNum"></div></h3>
+				<h3><span>Your Score:</span><div id="userScore"></div></h3>
+			</div>
+
+			<div id="gems">
+				<ul>
+					<li><img src="assets/images/gem1.png" id="gem1"></li>
+					<li><img src="assets/images/gem2.png" id="gem2"></li>
+					<li><img src="assets/images/gem3.png" id="gem3"></li>
+					<li><img src="assets/images/gem4.png" id="gem4"></li>
+				</ul>
+			</div>
+
+			<div id="score">
+				<span>Wins: </span><span id="wins">0</span>
+				<br><br>
+				<span>Losses: </span><span id="losses">0</span>
 			</div>
 		</section>
+	
 	</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+<script src="assets/javascript/game.js"></script>
 
 </body>
 </html>

@@ -1,44 +1,58 @@
-var selectedChar;
-var currentEnemy;
-var currentEnemyIndex;
-var enemiesOnDeck;
-var defeatedArray = [];
-var charCount = 4;
-var characterArray = ["subzero", "scorpion", "cassie", "raiden"];
-var selectedCharIndex;
-var charNodeArray = [];
+$(document).ready(function() {
+	var number;
+	var gemNums = [];
+	var userGems = 0;
+	var wins = 0;
+	var losses = 0;
 
-var fighters = {
-	subzero: {
-		name: "Subzero",
-		hp: 140,
-		attack: 16,
-		baseAttack: 16,
-		cap: 25,
-		img: "subzero.jpg",
-	}
-	scorpion: {
-		name: "Scorpion",
-		hp: 160,
-		attack: 12,
-		baseAttack: 12,
-		cap: 17,
-		img: "scorpion.jpg"
-	}
-	baraka: {
-		name: "Baraka",
-		hp: 180,
-		attack: 10,
-		baseAttack: 10,
-		cap: 14,
-		img: "baraka.png"
-	}
-	raiden: {
-		name: "Raiden",
-		hp: 200,
-		attack: 8,
-		baseAttack: 8,
-		cap: 12,
-		img: "raiden.jpg"
-	}
+		function reset(){
+	number = (Math.floor(Math.random() * (121 - 19)) + 19);
+		$('#ranNum').html(number);
+			for (i=0; i<4; i++){
+				gemNums[i] = (Math.floor(Math.random()*(13-1)) + 1);
+			}
+		userGems = 0;
+		$('#userScore').html(userGems);
 }
+
+	reset();
+
+		$("#gem1").click(function() {
+	    userGems= userGems+gemNums[0];
+	    $('#userScore').html(userGems);
+	    scoreBoard(userGems);
+		})
+
+		$("#gem2").click(function() {
+	    userGems= userGems+gemNums[1];
+	    $('#userScore').html(userGems);
+	    scoreBoard(userGems);
+		})
+
+		$("#gem3").click(function() {
+	    userGems= userGems+gemNums[2];
+	    $('#userScore').html(userGems);
+	    scoreBoard(userGems);
+		})
+
+		$("#gem4").click(function() {
+	    userGems= userGems+gemNums[3];
+	    $('#userScore').html(userGems);
+	    scoreBoard(userGems);
+	})
+
+	function scoreBoard(x){
+		if (x === number) {
+			wins++;
+			$('#wins').html(wins);
+			alert('You Win!');
+			reset();
+		} else if (x > number) {
+			losses++;
+			$('#losses').html(losses);
+			alert('You Lose!')
+			reset();
+		}
+	}
+
+	});
